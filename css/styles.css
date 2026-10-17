@@ -54,12 +54,12 @@ img {
 .logo {
   display: flex;
   align-items: center;
-  height: 36px;
+  height: 40px;
 }
 
 .logo img,
 .logo svg {
-  height: 36px;
+  height: 40px;
   width: auto;
 }
 
@@ -83,7 +83,6 @@ img {
   line-height: 1.2;
 }
 
-/* Join button - dark/black like Labour */
 .btn-join {
   background: #1a1a1a;
   color: var(--white);
@@ -93,7 +92,6 @@ img {
   background: #333;
 }
 
-/* Donate button - red */
 .btn-donate {
   background: var(--accent);
   color: var(--white);
@@ -123,14 +121,12 @@ img {
   color: var(--white);
 }
 
-/* Divider line under logo row */
 .header-divider {
   height: 1px;
   background: #e8e8e8;
   width: 100%;
 }
 
-/* Navigation row - left aligned like Labour */
 .nav {
   display: flex;
   align-items: center;
@@ -225,7 +221,7 @@ img {
   color: var(--accent);
 }
 
-/* ========== REST OF STYLES ========== */
+/* Hero and rest of styles remain the same */
 .hero {
   position: relative;
   height: 560px;
@@ -280,21 +276,9 @@ img {
   align-items: center;
 }
 
-.quote-text {
-  flex: 1;
-}
-
-.quote-text h2 {
-  font-size: 42px;
-  font-weight: 800;
-  line-height: 1.15;
-  margin-bottom: 16px;
-}
-
-.quote-text p {
-  font-size: 18px;
-  opacity: 0.95;
-}
+.quote-text { flex: 1; }
+.quote-text h2 { font-size: 42px; font-weight: 800; line-height: 1.15; margin-bottom: 16px; }
+.quote-text p { font-size: 18px; opacity: 0.95; }
 
 .video-card {
   flex: 0 0 420px;
@@ -303,375 +287,69 @@ img {
   overflow: hidden;
   box-shadow: 0 20px 50px rgba(0,0,0,0.25);
 }
+.video-card img { width: 100%; height: 240px; object-fit: cover; }
+.video-card .video-info { padding: 16px 20px; color: var(--white); }
+.video-card .video-info h3 { font-size: 16px; font-weight: 700; }
+.video-card .video-info p { font-size: 13px; opacity: 0.8; margin-top: 4px; }
 
-.video-card img {
-  width: 100%;
-  height: 240px;
-  object-fit: cover;
-}
+.section { max-width: 1400px; margin: 0 auto; padding: 60px 40px; }
+.section-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 28px; }
+.section-header h2 { font-size: 28px; font-weight: 700; color: var(--primary); }
+.section-header a { color: var(--accent); font-weight: 600; font-size: 15px; }
 
-.video-card .video-info {
-  padding: 16px 20px;
-  color: var(--white);
-}
+.stories-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+.story-card { border-radius: 12px; overflow: hidden; background: var(--white); box-shadow: 0 4px 20px rgba(0,0,0,0.06); transition: transform 0.2s; }
+.story-card:hover { transform: translateY(-4px); }
+.story-card img { width: 100%; height: 160px; object-fit: cover; }
+.story-card .story-body { padding: 16px; }
+.story-card h3 { font-size: 15px; font-weight: 600; color: var(--primary); margin-bottom: 6px; }
+.story-card .date { font-size: 13px; color: #888; }
 
-.video-card .video-info h3 {
-  font-size: 16px;
-  font-weight: 700;
-}
+.plan-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 20px; }
+.plan-card { background: var(--light-gray); border-radius: 12px; padding: 28px; transition: box-shadow 0.2s; }
+.plan-card:hover { box-shadow: 0 8px 30px rgba(0,0,0,0.08); }
+.plan-card .icon { width: 48px; height: 48px; background: var(--accent); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: white; font-size: 22px; margin-bottom: 16px; }
+.plan-card h3 { font-size: 18px; font-weight: 700; color: var(--primary); margin-bottom: 8px; }
+.plan-card p { font-size: 14px; color: #555; }
 
-.video-card .video-info p {
-  font-size: 13px;
-  opacity: 0.8;
-  margin-top: 4px;
-}
+.signup-section { background: var(--accent); color: var(--white); border-radius: 16px; padding: 48px; display: flex; gap: 48px; max-width: 1200px; margin: 40px auto; }
+.signup-text { flex: 1; }
+.signup-text h2 { font-size: 36px; font-weight: 800; line-height: 1.2; margin-bottom: 12px; }
+.signup-text p { font-size: 16px; opacity: 0.9; }
+.signup-form { flex: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.signup-form .full { grid-column: 1 / -1; }
+.signup-form label { display: block; font-size: 13px; font-weight: 600; margin-bottom: 6px; }
+.signup-form input[type="text"], .signup-form input[type="email"] { width: 100%; padding: 12px 14px; border: none; border-radius: 8px; font-size: 15px; }
+.radio-group { display: flex; flex-direction: column; gap: 8px; }
+.radio-group label { display: flex; align-items: center; gap: 8px; font-weight: 400; font-size: 14px; cursor: pointer; }
+.signup-form .submit-btn { grid-column: 1 / -1; background: var(--primary); color: white; border: none; padding: 14px; border-radius: 8px; font-size: 16px; font-weight: 700; cursor: pointer; margin-top: 8px; }
+.signup-form .submit-btn:hover { background: #152238; }
+.form-note { grid-column: 1 / -1; font-size: 12px; opacity: 0.8; margin-top: 4px; }
 
-.section {
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 60px 40px;
-}
+.banner { position: relative; height: 320px; border-radius: 16px; overflow: hidden; margin: 40px auto; max-width: 1400px; display: flex; align-items: center; }
+.banner-bg { position: absolute; inset: 0; background: center/cover no-repeat; filter: brightness(0.55); }
+.banner-content { position: relative; z-index: 2; padding: 0 48px; color: white; max-width: 500px; }
+.banner-content h2 { font-size: 36px; font-weight: 800; margin-bottom: 12px; }
+.banner-content p { font-size: 16px; margin-bottom: 20px; opacity: 0.95; }
 
-.section-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 28px;
-}
+.footer { background: var(--white); border-top: 1px solid #e5e5e5; padding: 48px 40px 24px; margin-top: 60px; }
+.footer-grid { max-width: 1400px; margin: 0 auto; display: grid; grid-template-columns: 1.5fr repeat(5, 1fr); gap: 32px; margin-bottom: 40px; }
+.footer-brand p { font-size: 13px; color: #666; margin-top: 12px; line-height: 1.5; }
+.footer-col h4 { font-size: 14px; font-weight: 700; color: var(--primary); margin-bottom: 16px; }
+.footer-col a { display: block; font-size: 13px; color: #555; margin-bottom: 10px; }
+.footer-col a:hover { color: var(--accent); }
+.footer-bottom { max-width: 1400px; margin: 0 auto; padding-top: 24px; border-top: 1px solid #eee; display: flex; justify-content: space-between; align-items: center; font-size: 13px; color: #777; }
+.socials { display: flex; gap: 16px; }
+.socials a { color: #555; font-size: 18px; }
 
-.section-header h2 {
-  font-size: 28px;
-  font-weight: 700;
-  color: var(--primary);
-}
-
-.section-header a {
-  color: var(--accent);
-  font-weight: 600;
-  font-size: 15px;
-}
-
-.stories-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
-}
-
-.story-card {
-  border-radius: 12px;
-  overflow: hidden;
-  background: var(--white);
-  box-shadow: 0 4px 20px rgba(0,0,0,0.06);
-  transition: transform 0.2s;
-}
-
-.story-card:hover {
-  transform: translateY(-4px);
-}
-
-.story-card img {
-  width: 100%;
-  height: 160px;
-  object-fit: cover;
-}
-
-.story-card .story-body {
-  padding: 16px;
-}
-
-.story-card h3 {
-  font-size: 15px;
-  font-weight: 600;
-  color: var(--primary);
-  margin-bottom: 6px;
-}
-
-.story-card .date {
-  font-size: 13px;
-  color: #888;
-}
-
-.plan-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-  margin-top: 20px;
-}
-
-.plan-card {
-  background: var(--light-gray);
-  border-radius: 12px;
-  padding: 28px;
-  transition: box-shadow 0.2s;
-}
-
-.plan-card:hover {
-  box-shadow: 0 8px 30px rgba(0,0,0,0.08);
-}
-
-.plan-card .icon {
-  width: 48px;
-  height: 48px;
-  background: var(--accent);
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  font-size: 22px;
-  margin-bottom: 16px;
-}
-
-.plan-card h3 {
-  font-size: 18px;
-  font-weight: 700;
-  color: var(--primary);
-  margin-bottom: 8px;
-}
-
-.plan-card p {
-  font-size: 14px;
-  color: #555;
-}
-
-.signup-section {
-  background: var(--accent);
-  color: var(--white);
-  border-radius: 16px;
-  padding: 48px;
-  display: flex;
-  gap: 48px;
-  max-width: 1200px;
-  margin: 40px auto;
-}
-
-.signup-text {
-  flex: 1;
-}
-
-.signup-text h2 {
-  font-size: 36px;
-  font-weight: 800;
-  line-height: 1.2;
-  margin-bottom: 12px;
-}
-
-.signup-text p {
-  font-size: 16px;
-  opacity: 0.9;
-}
-
-.signup-form {
-  flex: 1;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
-}
-
-.signup-form .full {
-  grid-column: 1 / -1;
-}
-
-.signup-form label {
-  display: block;
-  font-size: 13px;
-  font-weight: 600;
-  margin-bottom: 6px;
-}
-
-.signup-form input[type="text"],
-.signup-form input[type="email"] {
-  width: 100%;
-  padding: 12px 14px;
-  border: none;
-  border-radius: 8px;
-  font-size: 15px;
-}
-
-.radio-group {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.radio-group label {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-weight: 400;
-  font-size: 14px;
-  cursor: pointer;
-}
-
-.signup-form .submit-btn {
-  grid-column: 1 / -1;
-  background: var(--primary);
-  color: white;
-  border: none;
-  padding: 14px;
-  border-radius: 8px;
-  font-size: 16px;
-  font-weight: 700;
-  cursor: pointer;
-  margin-top: 8px;
-}
-
-.signup-form .submit-btn:hover {
-  background: #152238;
-}
-
-.form-note {
-  grid-column: 1 / -1;
-  font-size: 12px;
-  opacity: 0.8;
-  margin-top: 4px;
-}
-
-.banner {
-  position: relative;
-  height: 320px;
-  border-radius: 16px;
-  overflow: hidden;
-  margin: 40px auto;
-  max-width: 1400px;
-  display: flex;
-  align-items: center;
-}
-
-.banner-bg {
-  position: absolute;
-  inset: 0;
-  background: center/cover no-repeat;
-  filter: brightness(0.55);
-}
-
-.banner-content {
-  position: relative;
-  z-index: 2;
-  padding: 0 48px;
-  color: white;
-  max-width: 500px;
-}
-
-.banner-content h2 {
-  font-size: 36px;
-  font-weight: 800;
-  margin-bottom: 12px;
-}
-
-.banner-content p {
-  font-size: 16px;
-  margin-bottom: 20px;
-  opacity: 0.95;
-}
-
-.footer {
-  background: var(--white);
-  border-top: 1px solid #e5e5e5;
-  padding: 48px 40px 24px;
-  margin-top: 60px;
-}
-
-.footer-grid {
-  max-width: 1400px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1.5fr repeat(5, 1fr);
-  gap: 32px;
-  margin-bottom: 40px;
-}
-
-.footer-brand p {
-  font-size: 13px;
-  color: #666;
-  margin-top: 12px;
-  line-height: 1.5;
-}
-
-.footer-col h4 {
-  font-size: 14px;
-  font-weight: 700;
-  color: var(--primary);
-  margin-bottom: 16px;
-}
-
-.footer-col a {
-  display: block;
-  font-size: 13px;
-  color: #555;
-  margin-bottom: 10px;
-}
-
-.footer-col a:hover {
-  color: var(--accent);
-}
-
-.footer-bottom {
-  max-width: 1400px;
-  margin: 0 auto;
-  padding-top: 24px;
-  border-top: 1px solid #eee;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 13px;
-  color: #777;
-}
-
-.socials {
-  display: flex;
-  gap: 16px;
-}
-
-.socials a {
-  color: #555;
-  font-size: 18px;
-}
-
-.page-hero {
-  background: var(--primary);
-  color: white;
-  padding: 80px 40px 60px;
-  text-align: center;
-}
-
-.page-hero h1 {
-  font-size: 48px;
-  font-weight: 800;
-  margin-bottom: 12px;
-}
-
-.page-hero p {
-  font-size: 18px;
-  opacity: 0.9;
-  max-width: 600px;
-  margin: 0 auto;
-}
-
-.content {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 60px 40px;
-}
-
-.content h2 {
-  font-size: 28px;
-  color: var(--primary);
-  margin: 32px 0 16px;
-}
-
-.content p {
-  margin-bottom: 16px;
-  font-size: 16px;
-}
-
-.content ul {
-  margin: 16px 0 16px 24px;
-}
-
-.content li {
-  margin-bottom: 8px;
-}
+.page-hero { background: var(--primary); color: white; padding: 80px 40px 60px; text-align: center; }
+.page-hero h1 { font-size: 48px; font-weight: 800; margin-bottom: 12px; }
+.page-hero p { font-size: 18px; opacity: 0.9; max-width: 600px; margin: 0 auto; }
+.content { max-width: 900px; margin: 0 auto; padding: 60px 40px; }
+.content h2 { font-size: 28px; color: var(--primary); margin: 32px 0 16px; }
+.content p { margin-bottom: 16px; font-size: 16px; }
+.content ul { margin: 16px 0 16px 24px; }
+.content li { margin-bottom: 8px; }
 
 @media (max-width: 1024px) {
   .stories-grid { grid-template-columns: repeat(2, 1fr); }
