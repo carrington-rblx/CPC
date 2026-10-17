@@ -6,6 +6,7 @@
   --light-gray: #f5f5f5;
   --dark: #1a1a1a;
   --text: #333333;
+  --nav-text: #4a4a4a;
   --font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
 }
 
@@ -33,10 +34,9 @@ img {
   display: block;
 }
 
-/* Header */
+/* ========== HEADER (matches Labour style) ========== */
 .header {
   background: var(--white);
-  border-bottom: 1px solid #e5e5e5;
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -46,7 +46,7 @@ img {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 12px 40px;
+  padding: 14px 48px;
   max-width: 1400px;
   margin: 0 auto;
 }
@@ -54,17 +54,18 @@ img {
 .logo {
   display: flex;
   align-items: center;
-  height: 40px;
+  height: 36px;
 }
 
-.logo svg, .logo img {
-  height: 40px;
+.logo img,
+.logo svg {
+  height: 36px;
   width: auto;
 }
 
 .header-actions {
   display: flex;
-  gap: 12px;
+  gap: 10px;
   align-items: center;
 }
 
@@ -72,13 +73,34 @@ img {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  padding: 10px 20px;
+  padding: 9px 18px;
   border-radius: 999px;
   font-weight: 600;
   font-size: 14px;
   border: none;
   cursor: pointer;
-  transition: all 0.2s;
+  transition: all 0.2s ease;
+  line-height: 1.2;
+}
+
+/* Join button - dark/black like Labour */
+.btn-join {
+  background: #1a1a1a;
+  color: var(--white);
+}
+
+.btn-join:hover {
+  background: #333;
+}
+
+/* Donate button - red */
+.btn-donate {
+  background: var(--accent);
+  color: var(--white);
+}
+
+.btn-donate:hover {
+  background: var(--accent-hover);
 }
 
 .btn-primary {
@@ -101,50 +123,53 @@ img {
   color: var(--white);
 }
 
-.btn-dark {
-  background: var(--primary);
-  color: var(--white);
+/* Divider line under logo row */
+.header-divider {
+  height: 1px;
+  background: #e8e8e8;
+  width: 100%;
 }
 
-.btn-dark:hover {
-  background: #152238;
-}
-
+/* Navigation row - left aligned like Labour */
 .nav {
   display: flex;
-  justify-content: center;
-  gap: 32px;
-  padding: 0 40px 12px;
+  align-items: center;
+  gap: 28px;
+  padding: 12px 48px;
   max-width: 1400px;
   margin: 0 auto;
-  position: relative;
 }
 
-.nav a, .nav .dropdown-toggle {
+.nav a,
+.nav .dropdown-toggle {
   font-size: 15px;
   font-weight: 500;
-  color: var(--primary);
-  padding: 8px 0;
+  color: var(--nav-text);
+  padding: 4px 0;
   position: relative;
   cursor: pointer;
+  white-space: nowrap;
 }
 
-.nav a:hover, .nav .dropdown-toggle:hover {
+.nav a:hover,
+.nav .dropdown-toggle:hover {
   color: var(--accent);
 }
 
-.nav a::after, .nav .dropdown-toggle::after {
+.nav a::after,
+.nav .dropdown-toggle::after {
   content: '';
   position: absolute;
-  bottom: 0;
+  bottom: -2px;
   left: 0;
   width: 0;
   height: 2px;
   background: var(--accent);
-  transition: width 0.2s;
+  transition: width 0.2s ease;
 }
 
-.nav a:hover::after, .nav .dropdown-toggle:hover::after {
+.nav a:hover::after,
+.nav .dropdown-toggle:hover::after {
   width: 100%;
 }
 
@@ -155,13 +180,12 @@ img {
 .dropdown-menu {
   display: none;
   position: absolute;
-  top: 100%;
-  left: 50%;
-  transform: translateX(-50%);
+  top: calc(100% + 8px);
+  left: 0;
   background: var(--white);
   border: 1px solid #e5e5e5;
   border-radius: 8px;
-  box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.12);
   min-width: 240px;
   padding: 8px 0;
   z-index: 100;
@@ -174,7 +198,7 @@ img {
 
 .dropdown-menu a {
   display: block;
-  padding: 10px 20px;
+  padding: 10px 18px;
   font-size: 14px;
   color: var(--text);
 }
@@ -190,11 +214,18 @@ img {
 
 .search-icon {
   cursor: pointer;
-  color: var(--primary);
-  font-size: 18px;
+  color: var(--nav-text);
+  font-size: 16px;
+  margin-left: 4px;
+  display: flex;
+  align-items: center;
 }
 
-/* Hero */
+.search-icon:hover {
+  color: var(--accent);
+}
+
+/* ========== REST OF STYLES ========== */
 .hero {
   position: relative;
   height: 560px;
@@ -238,7 +269,6 @@ img {
   gap: 16px;
 }
 
-/* Quote section */
 .quote-section {
   background: var(--accent);
   color: var(--white);
@@ -296,7 +326,6 @@ img {
   margin-top: 4px;
 }
 
-/* Stories */
 .section {
   max-width: 1400px;
   margin: 0 auto;
@@ -362,7 +391,6 @@ img {
   color: #888;
 }
 
-/* Plan cards */
 .plan-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -406,7 +434,6 @@ img {
   color: #555;
 }
 
-/* Signup form */
 .signup-section {
   background: var(--accent);
   color: var(--white);
@@ -500,7 +527,6 @@ img {
   margin-top: 4px;
 }
 
-/* Join / Donate banners */
 .banner {
   position: relative;
   height: 320px;
@@ -539,7 +565,6 @@ img {
   opacity: 0.95;
 }
 
-/* Footer */
 .footer {
   background: var(--white);
   border-top: 1px solid #e5e5e5;
@@ -603,7 +628,6 @@ img {
   font-size: 18px;
 }
 
-/* Page content */
 .page-hero {
   background: var(--primary);
   color: white;
@@ -649,56 +673,22 @@ img {
   margin-bottom: 8px;
 }
 
-/* Responsive */
 @media (max-width: 1024px) {
-  .stories-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  .plan-grid {
-    grid-template-columns: 1fr;
-  }
-  .quote-section {
-    flex-direction: column;
-  }
-  .video-card {
-    flex: none;
-    width: 100%;
-  }
-  .signup-section {
-    flex-direction: column;
-  }
-  .footer-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-  .hero-text h1 {
-    font-size: 48px;
-  }
+  .stories-grid { grid-template-columns: repeat(2, 1fr); }
+  .plan-grid { grid-template-columns: 1fr; }
+  .quote-section { flex-direction: column; }
+  .video-card { flex: none; width: 100%; }
+  .signup-section { flex-direction: column; }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+  .hero-text h1 { font-size: 48px; }
 }
 
 @media (max-width: 640px) {
-  .header-top, .nav {
-    padding-left: 20px;
-    padding-right: 20px;
-  }
-  .nav {
-    gap: 16px;
-    overflow-x: auto;
-  }
-  .stories-grid {
-    grid-template-columns: 1fr;
-  }
-  .hero {
-    height: auto;
-    padding: 60px 0;
-  }
-  .hero-content {
-    flex-direction: column;
-    text-align: center;
-  }
-  .hero-text h1 {
-    font-size: 40px;
-  }
-  .footer-grid {
-    grid-template-columns: 1fr;
-  }
+  .header-top, .nav { padding-left: 20px; padding-right: 20px; }
+  .nav { gap: 16px; overflow-x: auto; }
+  .stories-grid { grid-template-columns: 1fr; }
+  .hero { height: auto; padding: 60px 0; }
+  .hero-content { flex-direction: column; text-align: center; }
+  .hero-text h1 { font-size: 40px; }
+  .footer-grid { grid-template-columns: 1fr; }
 }
